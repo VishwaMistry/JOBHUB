@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+<!-- Latest compiled JavaScript -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="stylee.css" rel="stylesheet"/>
+    <title>Resume</title>
+    <script src="resume-script.js"></script>
+</head>
+<body>
+    <!-- header section starts -->
+    <header class="header">
+        <section class="flex">
+            <div id="menu-btn" class="fas fa-bars-staggered"></div>
+            <a href="home.html" class="logo">
+                <i class="fas fa-briefcase"></i>
+                JOBHUB.
+            </a>
+
+            <nav class="navbar" style="padding-right: 300px;">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="jobs.html">All Jobs</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="login.html">Account</a>
+                <a href="resume.html">Resume</a>
+            </nav>
+            <!-- <a href="#" class="btn" style="margin-top:0;">Post Job</a> -->
+        </section>
+    </header>
+    <!-- header section ends -->
+    <div class="container" id="cv-form">
+    <h1 id="h1">RESUME GENERATOR</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h3 style="font-size: 2.5rem; color: #F9F6EE;" class="text-center pt-5">Personal Details</h3>
+            <div class="form-group">
+                <label for="name" style="color: #F9F6EE; font-size: 1.5rem;" class="pt-3">Your Name:</label>
+                <input style="height: 3rem;" type="text" id="name" placeholder="Enter here" class="form-control"/>
+            </div>
+            <div class="form-group mt-2">
+                <label for="email" style="color: #F9F6EE; font-size: 1.5rem;" class="pt-3">Your Email:</label>
+                <input style="height: 3rem;" type="email" id="email" placeholder="Enter here" class="form-control"/>
+            </div>
+            <div class="form-group mt-2">
+                <label for="contact" style="color: #F9F6EE; font-size: 1.5rem;" class="pt-3">Your Contact No:</label>
+                <input style="height: 3rem;" type="number" id="contact" placeholder="Enter here" class="form-control"/>
+            </div>
+            <!-- <div class="form-group mt-2">
+                <label style="color: #F9F6EE; font-size: 1.5rem;" class="pt-3" for="addressField">Your Address:</label>
+                <textarea id="addressField" placeholder="Enter here" rows="5" class="form-control"></textarea>
+            </div> -->
+            <p class="mt-5 text-center" style="color: #F9F6EE; font-size: 2.3rem;">Important Links</p>
+            <div class="form-group mt-2">
+                <label style="color: #F9F6EE; font-size: 1.5rem;" class="pt-3" for="fb">Facebook:</label>
+                <input style="height: 3.2rem;" type="text" id="fb" placeholder="Enter here" class="form-control"/>
+            </div>
+            <div class="form-group mt-2">
+                <label style="color: #F9F6EE; font-size: 1.5rem;" class="pt-3" for="ig">Instagram:</label>
+                <input style="height: 3.2rem;" type="text" id="ig" placeholder="Enter here" class="form-control"/>
+            </div>
+            <div class="form-group mt-2">
+                <label style="color: #F9F6EE; font-size: 1.5rem;" class="pt-3" for="linkd">LinkedIn:</label>
+                <input style="height: 3.2rem;" type="text" id="linkd" placeholder="Enter here" class="form-control"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3 style="font-size: 2.5rem; color: #F9F6EE;" class="text-center pt-5">Professional Details</h3>
+            <div class="form-group mt-2">
+                <label style="color: #F9F6EE; font-size: 1.7rem;" class="pt-3" for="">Objective:</label>
+                <textarea id="objField" placeholder="Enter here" rows="5" class="form-control"></textarea>
+            </div>
+            <div class="form-group mt-2" id="we">
+                <label style="color: #F9F6EE; font-size: 1.7rem;" class="pt-3" for="">Work Experience:</label>
+                <textarea placeholder="Enter here" rows="3" class="form-control weField"></textarea>
+                <div class="container text-center mt-2" id="weAddButton">
+                    <button onclick="addNewWEField()" class="btn btn-light btn-sm">Add</button>
+                </div>
+            </div>
+
+            <div class="form-group mt-2" id="aq">
+                <label style="color: #F9F6EE; font-size: 1.7rem;" class="pt-3" for="">Academic Qualification:</label>
+                <textarea placeholder="Enter here" rows="3" class="form-control aqField"></textarea>
+                <div class="container text-center mt-2" id="aqAddButton">
+                    <button onclick="addNewAQField()" class="btn btn-light btn-sm">Add</button>
+                </div>
+            </div>
+            <div class="form-group mt-2" id="exp">
+                <label style="color: #F9F6EE; font-size: 1.7rem;" class="pt-3" for="">Expertise:</label>
+                <textarea placeholder="Enter here" rows="3" class="form-control expField"></textarea>
+                <div class="container text-center mt-2" id="expAddButton">
+                    <button onclick="addNewEXPField()" class="btn btn-light btn-sm">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center mt-3">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+    </div>
+    </div>
+    <!-- cv template -->
+    <div class="container" id="cv-template">
+        <div class="row">
+            <!-- first col -->
+            <div class="col-md-4 text-center pyt-5">
+                <img src="https://t4.ftcdn.net/jpg/03/31/69/91/360_F_331699188_lRpvqxO5QRtwOM05gR50ImaaJgBx68vi.jpg" 
+                    class="img-fluid myimg" alt=""/>
+                <div class="container">
+                    <p id="nameT1" style="font-size: 1.5rem; color: #F9F6EE;">Vishwa J. Mistry</p>
+                    <p id="emailT" style="font-size: 1.5rem; color: #F9F6EE;">vishwamistry@gmail.com</p>
+                    <p id="contactT" style="font-size: 1.5rem; color: #F9F6EE;">9897969594</p>
+                    <!-- <p class="addressT" style="font-size: 1.3rem; color: #F9F6EE;">901,Sarjan Tower,Ahmedabad,Gujarat</p> -->
+                    <hr/>
+                    <p><a id="fbT" style="font-size: 1.5rem; color: #F9F6EE;" href="#1">https://www.facebook.com/VishwaMistry</a></p>
+                    <p><a id="instaT" style="font-size: 1.5rem; color: #F9F6EE;" href="#2">https://www.instagram.com/vishwa_mistry</a></p>
+                    <p><a id="linkedT" style="font-size: 1.5rem; color: #F9F6EE;" href="#3">https://www.linkedin.com/VishwaMistry</a></p>
+                </div>
+            </div>
+            <!-- second col -->
+            <div class="col-md-8 py-5">
+                <h1 class="text-center" id="nameT2" style="font-weight: 980; color: #F9F6EE;">VISHWA J. MISTRY</h1>
+                <!-- objective card -->
+                <div class="card mt-5">
+                    <div class="card-header" style="background-color: #FFDB58;">
+                        <h3 style="font-size: 2.3rem;">Objective</h3>
+                    </div>
+                    <div class="card-body" style="background-color: #36454F; color: #F9F6EE; font-size: 1.5rem;">
+                        <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Odio dolores itaque dignissimos nobis exercitationem placeat, 
+                            rem ducimus labore cupiditate nemo ea tenetur excepturi doloribus deleniti fugiat quibusdam ullam officiis libero. 
+                            Nihil eligendi neque non eum ex dolorem sunt et similique pariatur id inventore adipisci tenetur aliquid unde, rem magnam numquam!
+                        </p>
+                    </div>
+                </div>
+                <!-- work experience -->
+                <div class="card mt-5">
+                    <div class="card-header" style="background-color: #FFDB58;">
+                        <h3 style="font-size: 2.3rem;">Work Experience</h3>
+                    </div>
+                    <div class="card-body" style="background-color: #36454F; color: #F9F6EE; font-size: 1.5rem;">
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, eum?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, eum?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, eum?</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- academic qualification -->
+                <div class="card mt-5">
+                    <div class="card-header" style="background-color: #FFDB58;">
+                        <h3 style="font-size: 2.3rem;">Academic Qualification</h3>
+                    </div>
+                    <div class="card-body" style="background-color: #36454F; color: #F9F6EE; font-size: 1.5rem;">
+                        <ul id="aqT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, eum?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, eum?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, eum?</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- expertise  -->
+                <div class="card mt-5">
+                    <div class="card-header" style="background-color: #FFDB58;">
+                        <h3 style="font-size: 2.3rem;">Expertise</h3>
+                    </div>
+                    <div class="card-body" style="background-color: #36454F; color: #F9F6EE; font-size: 1.5rem;">
+                        <ul id="expT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, eum?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, eum?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, eum?</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <div class="container mt-3 text-center">
+                    <button class="btn" onclick="printCV()" style="background-color: #FFDB58;">
+                        Print CV
+                    </button>
+                </div> -->
+            </div>
+            </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
